@@ -13,7 +13,6 @@ new_list = []
 for x in element:
     if element.count(x) > 1:
         new_list.append(x)
-repeating_elements = set(new_list)
-print(repeating_elements)
+
 
 print(f'{list_a} -> {new_list[0]}')
