@@ -1,24 +1,14 @@
 import re
+
 while True:
     phone_number = input()
-    if phone_number == 'exit':
-        break
-    print(bool(re.findall(r'^\+[\(\-]?(\d[\(\)\-]?){11}\d$' or
-                         r'^\(?(\d[\-\(\)]?){9}\d$' and
-                        r'[\+]?\d*(\(\d{3}\))?\d*\-?\d*\-?\d*\d$', phone_number)))
+    phone_number1 = phone_number.replace('-', '')
+    phone_number2 = phone_number1.replace('+', '')
+    phone_number3 = phone_number2.replace('(', '')
+    phone_number4 = phone_number3.replace(')', '')
+    phone_number5 = phone_number4.replace(' ', '')
+    #print(phone_number5)
+    if True:
+        print(bool(re.match(r'\d{10,14}', phone_number5)))
 
-
-
-
-
-
-
-#^\+[\(\-]?(\d[\(\)\-]?){11}\d$
-#если номер содержит + в начале,
-# откр.скобочка
-# и - которые встречается один раз (?),
-# встречаются 11 раз цифры
-# и  -
-# и скобочки по одному разу
-# и в конце 12-я цифра
 
