@@ -14,13 +14,13 @@ def my_function(meter, convert_to):
 
 
 while True:
-    value1 = input('Введите значение -> ')
+    value1 = float((input('Введите значение -> ')))
     value2 = input('Введите меру длинны -> ')
-    if value1.isdigit() and value2 in ['cm', 'ft', 'inch', 'fathom']:
-        value1 = int(value1)
+    if value2 in ['cm', 'ft', 'inch', 'fathom']:
         print(my_function(value1, value2))
         print(f'{value1} meter in {value2} = {my_function(value1, value2)} {value2}')
     elif value1 or value2 == 'exit':
         break
     else:
         print('Error')
+# type1='cm', type2='inch', type3='ft', type4='fathom'
