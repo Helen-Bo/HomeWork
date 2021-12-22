@@ -4,10 +4,10 @@ import datetime
 import time
 
 # my_list = ['a', 'f', 'g', '1', '4', 'y', 'r']
-my_list = ['4', 'r']
-y = len(my_list)
+for_combination = ['4', 'r']
+y = len(for_combination)
 
-list_a = input('Введите значения для поиска повторяющегося элемента -> ')
+for_repeating_elements = input('Введите значения для поиска повторяющегося элемента -> ')
 
 
 def decorator_incoming_data(func_to_decorate):
@@ -34,7 +34,7 @@ def work_time(func):
 @work_time
 @decorator_incoming_data
 def repeating_elements(str):
-    str = list_a
+    str = for_repeating_elements
     element = re.findall(r'[^\b,;:\-\'\"\+@#|\.()%\$!\s]', str)
 
     new_list = []
@@ -48,13 +48,13 @@ def repeating_elements(str):
 @work_time
 @decorator_incoming_data
 def combinations(text, *length):
-    text = my_list
-    length = len(my_list)
+    text = for_combination
+    length = len(for_combination)
     for x in itertools.combinations_with_replacement(text, length):
         print(list(x))
     return x
 
 
-print(repeating_elements(list_a))
-print(combinations(my_list, y))
+print(repeating_elements(for_repeating_elements))
+print(combinations(for_combination, y))
 
