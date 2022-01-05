@@ -58,21 +58,21 @@ class GenusHerring(FamilyHerring):
     pass
 
 
-class KindC(GenusCarp):
+class KindCarp(GenusCarp):
 
     def __init__(self, name):
         print(name)
         self.name = name
 
 
-class KindH(GenusHerring):
+class KindHerring(GenusHerring):
 
     def __init__(self, name):
         print(name)
         self.name = name
 
 
-lala = KindC('Лещ Валера')
+lala = KindCarp('Лещ Валера')
 lala.eukaryotes()
 lala.animal()
 lala.chordates()
