@@ -24,7 +24,7 @@ class ClassClass(Type):
     skeleton = 'скелет'
 
     def ray_finned_fish(self):
-        print(f'Класс: Лучеперые рыбы \nВнутренний {self.skeleton} парных плавников не имеет центральной оси')
+        print(f'Класс : Лучеперые рыбы \nВнутренний {self.skeleton} парных плавников не имеет центральной оси')
 
 
 class DetachmentCarps(ClassClass):
@@ -32,44 +32,64 @@ class DetachmentCarps(ClassClass):
     swimming_bladder = 'плавательный пузырь'
 
     def carps(self):
-        print(f'Отряд:Карпообразные  \nЕсть {self.weber_apparatus}; {self.swimming_bladder} соединён с кишечником')
+        print(f'Отряд : Карпообразные  \nЕсть {self.weber_apparatus}; {self.swimming_bladder} соединён с кишечником')
 
 
 class DetachmentHerring(ClassClass):
     fins = 'плавники'
 
     def herring(self):
-        print(f'Оряд:Сельдеобразные\nГрудные {self.fins} расположены ближе к брюху, брюшные {self.fins} находятся в средней части брюха')
+        print(f'Оряд : Сельдеобразные\nГрудные {self.fins} расположены ближе к брюху,'
+              f' брюшные {self.fins} находятся в средней части брюха')
 
 
 class FamilyCarp(DetachmentCarps):
-    pass
+    mustache = 'усы'
+
+    def family_carp(self):
+        print(f'Семейство : Карповые \nУ некоторых видов по уголкам рта есть короткие {self.mustache}, выполняющие роль вкусовых рецепторов')
 
 
 class FamilyHerring(DetachmentHerring):
-    pass
+    teeth = 'зубы'
+
+    def family_herring(self):
+        print(f'Семейство : Сельдевые \n{self.teeth} — необычно малого размера или вообще отсутствуют')
 
 
 class GenusCarp(FamilyCarp):
-    pass
+    def bream(self):
+        print(f'Род : Лещи')
 
 
 class GenusHerring(FamilyHerring):
-    pass
+    def fish_herring(self):
+        print(f'Род : Сельди')
 
 
 class KindCarp(GenusCarp):
+    body_length = 'длина тела'
 
     def __init__(self, name):
         print(name)
         self.name = name
+
+    def kind_of_bream(self):
+        print(f'Вид : Лещ\nПресноводная рыба, единственный представитель '
+              f'рода лещей из семейства карповых, отряда карпообразных'
+              f'\nМаксимальная {self.body_length} — 82 см')
 
 
 class KindHerring(GenusHerring):
+    body_length = 'длина тела'
 
     def __init__(self, name):
         print(name)
         self.name = name
+
+    def kind_of_herring(self):
+        print(f'Вид : Атлантическая сельдь\nСредняя {self.body_length} атлантической сельди — 20—25 см'
+              f'\nМаксимальная {self.body_length} 45 см')
 
 
 lala = KindCarp('Лещ Валера')
@@ -78,4 +98,14 @@ lala.animal()
 lala.chordates()
 lala.ray_finned_fish()
 lala.carps()
-
+lala.family_carp()
+lala.kind_of_bream()
+print('------------')
+mila = KindHerring('Сельдь Семен')
+mila.eukaryotes()
+mila.animal()
+mila.chordates()
+mila.ray_finned_fish()
+mila.herring()
+mila.family_herring()
+mila.kind_of_herring()
