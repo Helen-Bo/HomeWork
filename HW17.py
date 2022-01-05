@@ -58,13 +58,21 @@ class FamilyHerring(DetachmentHerring):
 
 
 class GenusCarp(FamilyCarp):
+    body = 'Тело'
+    scale = 'Чешуя'
+
     def bream(self):
-        print(f'Род : Лещи')
+        print(f'Род : Лещи\nУ представителей рода лещей {self.body} сильно сжатое с боков, высокое или удлинённое. '
+              f'{self.scale} умеренной величины. ')
 
 
 class GenusHerring(FamilyHerring):
+    body = 'Тело'
+    scale = 'Чешуя'
+
     def fish_herring(self):
-        print(f'Род : Сельди')
+        print(f'Род : Сельди\n{self.body} сжатое с боков, с зазубренным краем брюха. '
+              f'{self.scale} умеренная или крупная, редко мелкая.')
 
 
 class KindCarp(GenusCarp):
@@ -99,6 +107,7 @@ lala.chordates()
 lala.ray_finned_fish()
 lala.carps()
 lala.family_carp()
+lala.bream()
 lala.kind_of_bream()
 print('------------')
 mila = KindHerring('Сельдь Семен')
@@ -106,6 +115,7 @@ mila.eukaryotes()
 mila.animal()
 mila.chordates()
 mila.ray_finned_fish()
+mila.fish_herring()
 mila.herring()
-mila.family_herring()
+mila.fish_herring()
 mila.kind_of_herring()
