@@ -12,7 +12,7 @@ class Kingdom(Domain):
         print(f'Царство: Животные \n{self.nutrition} готовыми органическими соединениями')
 
 
-class Type(Kingdom):
+class TypeType(Kingdom):
     spine = 'Позвоничник'
     bilateral_symmetry = 'Двухсторонняя симметрия'
 
@@ -20,7 +20,7 @@ class Type(Kingdom):
         print(f'Тип : Хордовые \nХарактерно наличие таких признаков \n{self.spine} \n{self.bilateral_symmetry}')
 
 
-class ClassClass(Type):
+class ClassClass(TypeType):
     skeleton = 'скелет'
 
     def ray_finned_fish(self):
