@@ -51,6 +51,17 @@ class MyTemperature:
         else:
             return False
 
+    def __lt__(self, other):
+        if self.celsius_to_fahrenheit < other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin < other.celsius_to_fahrenheit or \
+                self.kelvin_to_fahrenheit < other.kelvin_to_fahrenheit or \
+                self.kelvin_to_celsius < other.kelvin_to_celsius or \
+                self.fahrenheit_to_celsius < other.fahrenheit_to_celsius or \
+                self.fahrenheit_to_kelvin < other.fahrenheit_to_kelvin:
+            return True
+        else:
+            return False
+
 
 print(MyTemperature.celsius_to_fahrenheit(10, 'F'))
 print(MyTemperature.celsius_to_kelvin(10, 'K'))
