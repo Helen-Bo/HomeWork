@@ -40,6 +40,12 @@ class MyTemperature:
         f_to_c = ((my_temp - 32) * MyTemperature.dict['F']) * MyTemperature.dict[measure]
         return f_to_c
 
+    def __lt__(self, other):
+        if self.celsius_to_fahrenheit > other.celsius_to_fahrenheit:
+            return True
+        else:
+            return False
+
 
 print(MyTemperature.celsius_to_fahrenheit(10, 'F'))
 print(MyTemperature.celsius_to_kelvin(10, 'K'))
@@ -49,3 +55,6 @@ print(MyTemperature.kelvin_to_celsius(10, 'C'))
 
 print(MyTemperature.fahrenheit_to_kelvin(10, 'K'))
 print(MyTemperature.fahrenheit_to_celsius(10, 'C'))
+
+temp1 = (MyTemperature.celsius_to_fahrenheit(10, 'F'))
+temp2 = (MyTemperature.celsius_to_fahrenheit(101, 'F'))
