@@ -12,7 +12,7 @@ class MyTemperature:
 
     @staticmethod
     def kelvin_to_celsius(my_temp, measure):
-        k_to_c = my_temp - MyTemperature.dict['K'] * MyTemperature.dict[measure]
+        k_to_c = (my_temp - MyTemperature.dict['K']) * MyTemperature.dict[measure]
         return k_to_c
 
     @staticmethod
@@ -130,3 +130,15 @@ print(temp2 < temp1)
 print(temp2 > temp1)
 print(temp2 + temp1)
 print(temp2 - temp1)
+print('***********')
+temp3 = (MyTemperature.kelvin_to_celsius(8, 'C'))
+temp4 = (MyTemperature.kelvin_to_celsius(2, 'C'))
+print(MyTemperature.kelvin_to_celsius(8, 'C'))
+print(MyTemperature.kelvin_to_celsius(2, 'C'))
+print(temp3 == temp4)
+print(temp3 <= temp4)
+print(temp3 >= temp4)
+print(temp3 < temp4)
+print(temp3 > temp4)
+print(temp3 + temp4)
+print(temp3 - temp4)
