@@ -95,6 +95,22 @@ class MyTemperature:
         else:
             return False
 
+    def __add__(self, other):
+        return MyTemperature(self.celsius_to_fahrenheit + other.celsius_to_fahrenheit or
+                             self.celsius_to_kelvin + other.celsius_to_fahrenheit or
+                             self.kelvin_to_fahrenheit + other.kelvin_to_fahrenheit or
+                             self.kelvin_to_celsius + other.kelvin_to_celsius or
+                             self.fahrenheit_to_celsius + other.fahrenheit_to_celsius or
+                             self.fahrenheit_to_kelvin + other.fahrenheit_to_kelvin)
+
+    def __sub__(self, other):
+        return MyTemperature(self.celsius_to_fahrenheit - other.celsius_to_fahrenheit or
+                             self.celsius_to_kelvin - other.celsius_to_fahrenheit or
+                             self.kelvin_to_fahrenheit - other.kelvin_to_fahrenheit or
+                             self.kelvin_to_celsius - other.kelvin_to_celsius or
+                             self.fahrenheit_to_celsius - other.fahrenheit_to_celsius or
+                             self.fahrenheit_to_kelvin - other.fahrenheit_to_kelvin)
+
 
 print(MyTemperature.celsius_to_fahrenheit(10, 'F'))
 print(MyTemperature.celsius_to_kelvin(10, 'K'))
@@ -106,9 +122,10 @@ print(MyTemperature.fahrenheit_to_kelvin(10, 'K'))
 print(MyTemperature.fahrenheit_to_celsius(10, 'C'))
 
 temp1 = (MyTemperature.celsius_to_fahrenheit(10, 'F'))
-temp2 = (MyTemperature.celsius_to_fahrenheit(101, 'F'))
+temp2 = (MyTemperature.celsius_to_fahrenheit(11, 'F'))
 print(temp2 == temp1)
 print(temp2 <= temp1)
 print(temp2 >= temp1)
 print(temp2 < temp1)
 print(temp2 > temp1)
+print(temp2+temp1)
