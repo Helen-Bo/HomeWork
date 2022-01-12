@@ -6,12 +6,11 @@ def my_function(meter, convert_to):
         result = round(meter * 3.28, 2)
         return result
     elif convert_to == 'inch':
-        result = round(meter * 39.27, 2)
+        result = round(meter * 39.37, 2)
         return result
     elif convert_to == 'fathom':
         result = round(meter / 1.829, 2)
         return result
-
 
 while True:
     value1 = float((input('Введите значение -> ')))
@@ -23,4 +22,3 @@ while True:
         break
     else:
         print('Error')
-# type1='cm', type2='inch', type3='ft', type4='fathom'

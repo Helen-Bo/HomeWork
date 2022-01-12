@@ -7,12 +7,14 @@
 # вывод:
 # aaa ccc ccc ddd ccc rrr eee ddd
 # 2
+
 text = input()
 
 old = input('Введите слово,которое хотите заменить - ')
 new = input('Введите слово для замены - ')
 
+
 print(text)
-text = text.replace(old, new)
-print(text)
-print(text.count(new))
+text2 = text.replace(old, new)
+print(text2)
+print(text.count(old))
