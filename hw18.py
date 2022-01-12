@@ -42,7 +42,7 @@ class MyTemperature:
 
     def __gt__(self, other):
         if self.celsius_to_fahrenheit > other.celsius_to_fahrenheit or \
-                self.celsius_to_kelvin > other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin > other.celsius_to_kelvin or \
                 self.kelvin_to_fahrenheit > other.kelvin_to_fahrenheit or \
                 self.kelvin_to_celsius > other.kelvin_to_celsius or \
                 self.fahrenheit_to_celsius > other.fahrenheit_to_celsius or \
@@ -53,7 +53,7 @@ class MyTemperature:
 
     def __lt__(self, other):
         if self.celsius_to_fahrenheit < other.celsius_to_fahrenheit or \
-                self.celsius_to_kelvin < other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin < other.celsius_to_kelvin or \
                 self.kelvin_to_fahrenheit < other.kelvin_to_fahrenheit or \
                 self.kelvin_to_celsius < other.kelvin_to_celsius or \
                 self.fahrenheit_to_celsius < other.fahrenheit_to_celsius or \
@@ -64,7 +64,7 @@ class MyTemperature:
 
     def __le__(self, other):
         if self.celsius_to_fahrenheit <= other.celsius_to_fahrenheit or \
-                self.celsius_to_kelvin <= other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin <= other.celsius_to_kelvin or \
                 self.kelvin_to_fahrenheit <= other.kelvin_to_fahrenheit or \
                 self.kelvin_to_celsius <= other.kelvin_to_celsius or \
                 self.fahrenheit_to_celsius <= other.fahrenheit_to_celsius or \
@@ -75,7 +75,7 @@ class MyTemperature:
 
     def __ge__(self, other):
         if self.celsius_to_fahrenheit >= other.celsius_to_fahrenheit or \
-                self.celsius_to_kelvin >= other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin >= other.celsius_to_kelvin or \
                 self.kelvin_to_fahrenheit >= other.kelvin_to_fahrenheit or \
                 self.kelvin_to_celsius >= other.kelvin_to_celsius or \
                 self.fahrenheit_to_celsius >= other.fahrenheit_to_celsius or \
@@ -86,7 +86,7 @@ class MyTemperature:
 
     def __eq__(self, other):
         if self.celsius_to_fahrenheit == other.celsius_to_fahrenheit or \
-                self.celsius_to_kelvin == other.celsius_to_fahrenheit or \
+                self.celsius_to_kelvin == other.celsius_to_kelvin or \
                 self.kelvin_to_fahrenheit == other.kelvin_to_fahrenheit or \
                 self.kelvin_to_celsius == other.kelvin_to_celsius or \
                 self.fahrenheit_to_celsius == other.fahrenheit_to_celsius or \
@@ -97,7 +97,7 @@ class MyTemperature:
 
     def __add__(self, other):
         return MyTemperature(self.celsius_to_fahrenheit + other.celsius_to_fahrenheit or
-                             self.celsius_to_kelvin + other.celsius_to_fahrenheit or
+                             self.celsius_to_kelvin + other.celsius_to_kelvin or
                              self.kelvin_to_fahrenheit + other.kelvin_to_fahrenheit or
                              self.kelvin_to_celsius + other.kelvin_to_celsius or
                              self.fahrenheit_to_celsius + other.fahrenheit_to_celsius or
@@ -105,7 +105,7 @@ class MyTemperature:
 
     def __sub__(self, other):
         return MyTemperature(self.celsius_to_fahrenheit - other.celsius_to_fahrenheit or
-                             self.celsius_to_kelvin - other.celsius_to_fahrenheit or
+                             self.celsius_to_kelvin - other.celsius_to_kelvin or
                              self.kelvin_to_fahrenheit - other.kelvin_to_fahrenheit or
                              self.kelvin_to_celsius - other.kelvin_to_celsius or
                              self.fahrenheit_to_celsius - other.fahrenheit_to_celsius or
