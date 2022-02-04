@@ -57,10 +57,9 @@ def get_horoscope(message):
         elif message == 'Рыбы':
             zodiac_icon = zodiac_map['pisces']
             prediction = get_text('https://orakul.com/horoscope/astrologic/general/pisces/today.html')
-        your_prediction = f''' Ежедневный голоскоп для {message}:
+        your_prediction = f''' Ежедневный голоскоп для знака зодиака {message}:
         {zodiac_icon}
-    {prediction}
-                            '''
+    {prediction}'''
         return your_prediction
     else:
         return 'Введите знак зодиака кирилицей.\nПервая буква заглавная, остальные сторчные.\n'
