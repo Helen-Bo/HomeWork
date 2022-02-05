@@ -3,10 +3,10 @@ import requests
 import time
 import schedule
 from bs4 import BeautifulSoup
-from telebot import TeleBot
+
 
 token = '5214712668:AAHK2kjhCHEa__olavwm9KnThKpAAdY3UNo'
-bot: TeleBot = telebot.TeleBot(token)
+bot: telebot.TeleBot = telebot.TeleBot(token)
 
 
 def get_text(url):
