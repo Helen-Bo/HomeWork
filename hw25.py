@@ -2,7 +2,7 @@ import telebot
 import requests
 import time
 import schedule
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 from telebot import TeleBot
 
 token = '5214712668:AAHK2kjhCHEa__olavwm9KnThKpAAdY3UNo'
@@ -11,7 +11,7 @@ bot: TeleBot = telebot.TeleBot(token)
 
 def get_text(url):
     response_horoscope = requests.get(url)
-    soup = bs(response_horoscope.text, 'lxml')
+    soup = BeautifulSoup(response_horoscope.text, 'lxml')
     for prediction in soup.find('p', {'class': ""}):
         return prediction
 
@@ -19,7 +19,8 @@ def get_text(url):
 def get_horoscope(message):
     zodiac_map = {'aries': '♈', 'taurus': '♉', 'gemini': '♊', 'cancer': '♋', 'lion': '♌', 'virgo': '♍', 'libra': '♎',
                   'scorpio': '♏', 'sagittarius': '♐', 'capricorn': '♑', 'aquarius': '♒', 'pisces': '♓'}
-    zodiac_sign = ['Овен', 'Телец', 'Близнецы', 'Рак', 'Лев', 'Дева', 'Весы', 'Скорпион', 'Стрелец', 'Козерог', 'Водолей' , 'Рыбы']
+    zodiac_sign = ['Овен', 'Телец', 'Близнецы', 'Рак', 'Лев', 'Дева',
+                   'Весы', 'Скорпион', 'Стрелец', 'Козерог', 'Водолей', 'Рыбы']
     if message in zodiac_sign:
         if message == 'Овен':
             zodiac_icon = zodiac_map['aries']
@@ -75,16 +76,16 @@ def start_message(message):
 
 @bot.message_handler(regexp='.*')
 def any_message(message):
-    print(message)
     bot.send_message(message.chat.id, get_horoscope(message.text))
+    schedule.every(1).minute.do(any_message(message))
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
-# schedule.every().day.at('7:30').do(any_message)
 
 
-# schedule.every(1).minute.do(any_message)
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
 
 
 bot.infinity_polling()
+
+
