@@ -66,12 +66,12 @@ def get_horoscope(message):
         return 'Введите знак зодиака кирилицей.\nПервая буква заглавная, остальные сторчные.\n'
 
 
-def run_schedules():
-    # schedule.every().day.at('08:00').do(any_message)
-    schedule.every(10).seconds.do(any_message)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+# def run_schedules():
+#     schedule.every().day.at('08:00').do(any_message)
+#     schedule.every(10).seconds.do(any_message)
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(1)
 
 
 @bot.message_handler(commands=['start'])
